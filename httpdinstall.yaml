@@ -1,0 +1,6 @@
+---
+- hosts: multi
+  tasks:
+  - name: install httpd
+    yum: pkg=httpd state=installed
+
