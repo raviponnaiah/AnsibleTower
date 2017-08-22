@@ -1,0 +1,40 @@
+# https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/sect-System_Monitoring_Tools-Net-SNMP.html
+
+- hosts: 10.215.237.241
+  become: True
+  
+  tasks:
+  - name: Install snmpd
+    yum:
+      name: net-snmp
+      state: latest
+
+  - name: Install net-snmp-libs
+    yum:
+      name: net-snmp-libs
+      state: latest
+
+  - name: Install net-snmp-utils
+    yum:
+      name: net-snmp-utils
+      state: latest
+
+  - name: Start snmpd
+    service:
+      name: snmpd
+      state: started
+      enabled: yes 
+      
+  - name: Stop snmpd
+    service:
+      name: snmpd
+      state: started
+      enabled: yes 
+      
+#  - name: Configure snmpd    
+  
+  - name: Start snmpd
+    service:
+      name: snmpd
+      state: started
+      enabled: yes 
